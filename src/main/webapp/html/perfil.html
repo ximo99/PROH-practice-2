@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title> Usuario | Futboleros</title>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="./images/icon.png">
+		<link rel="stylesheet" href="css/general.css">
+		<link rel="stylesheet" href="css/table.css">
+		<link rel="stylesheet" href="css/form.css">
+		<script src="js/libCapas2122.js"> </script>
+	</head>
+	
+	<body>
+		<div class="content">
+			<h1>Tu cuenta</h1>
+			<p> Saludos, desde aqu&iacute; puedes modificar los datos de cuenta, tu informaci&oacute;n personal o consultar tus pedidos realizados.</p>
+			
+			<div class="container_user">
+				<div class="form_profile_account_data">
+					<form action="profile_account_data.php">
+						<h2>Datos de la cuenta</h2>
+						
+						<p>
+							<label> Usuario:</label>
+							<input type="text" id="user" name="user">
+						</p>
+						
+						<p>
+							<label> Contrase&ntilde;a:</label>
+							<input type="text" id="password" name="password">
+						</p>
+						
+						<p>
+							<label> Nueva contrase&ntilde;a:</label>
+							<input type="text" id="new_password" name="password"> 
+						</p>
+						
+						<button type="button" name="submit" id="modify_account_data"> Modificar</button>
+					</form>
+				</div>
+				            
+				<div class="form_profile_personal_data" >
+					<form action="action_page.php">
+						<h2>Datos personales</h2>
+						
+						<p>
+							<label> Nombre:</label>
+							<input id="fname" type="text" name="fname">
+						</p>
+						
+						<p>
+							<label> Apellidos:</label>
+							<input id="lname" type="text" name="lname">
+						</p>
+						
+						<p>
+							<label> Domicilio:</label>
+							<input id="adress" type="text" name="adress"> 
+						</p>
+						
+						<p>
+							<label> Poblaci&oacute;n:</label>
+							<input type="text" id="town" name="town">
+						</p>
+						
+						<p>
+							<label> C&oacute;digo postal:</label>
+							<input type="text" id="postal_code" name="postal_code">
+						</p>
+						
+						<p>
+							<label> Pa&iacute;s:</label>
+							<input type="text" id="country" name="country"> 
+						</p>
+						
+						<p>
+							<label> Tel&eacute;fono:</label>
+							<input type="text" id="phone" name="phone">
+						</p>
+						
+						<button type="button" name="submit" id="modify_personal_data"> Modificar</button>
+					</form>
+				</div>
+			</div>
+			
+			<div class="form_profile_history" >
+				<h2> Historial de pedidos</h2>
+				                
+				<table>
+					<tr>
+						<th> ID pedido</th>
+						<th> Producto</th>
+						<th> Cantidad</th>
+						<th> Fecha de compra</th>
+						<th> Total importe</th>
+					</tr>
+					
+					<tr>
+						<td> 001</td>
+						<td> Camiseta Valencia C.F.</td>
+						<td> 1</td>
+						<td> 21/02/2022</td>
+						<td> 25 &euro;</td>
+					</tr>
+										
+					<tr>
+						<td> 002</td>
+						<td> Camiseta West Ham</td>
+						<td> 1</td>
+						<td> 22/02/2022</td>
+						<td> 25 &euro;</td>
+					</tr>
+										
+					<tr>
+						<td> 003</td>
+						<td> Camiseta Bar&#231;a</td>
+						<td> 1</td>
+						<td> 23/02/2022</td>
+						<td> 50 &euro;</td>
+					</tr>
+				</table>
+			</div>
+			
+			<br>
+			<br>
+		</div>
+	</body>
+</html>

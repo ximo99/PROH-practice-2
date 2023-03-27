@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title> Usuario | Futboler@s</title>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="./images/icon.png">
+		<link rel="stylesheet" href="css/general.css">
+		<link rel="stylesheet" href="css/usuario.css">
+		<link rel="stylesheet" href="css/form.css">
+		<script src="js/libCapas2122.js"> </script>
+	</head>
+	
+	<body>
+		<div class="content"> 
+	        <form action="login.php" method="post">
+	        
+	        	<h1> Accede a tu cuenta</h1>
+	        	
+			    <p>
+					<label for="user"> Usuario: </label>
+					<input type="text" id="user" name="user" required>
+			    </p>
+			    
+			    <p>
+					<label for="password"> Contrase&ntilde;a:</label>
+					<input type="text" id="password" name="password" required>
+			    </p>
+			    
+			    <button type="submit" name="submit" id="login" onclick="Cargar('html/perfil.html', 'contenido')"> Acceder</button>
+			</form>
+		</div>
+	</body>
+</html>

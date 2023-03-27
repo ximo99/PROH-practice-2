@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+		<title> Futboleros </title>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="./images/icon.png">
+		<link rel="stylesheet" href="css/general.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="js/libCapas2122.js"> </script>
+		<script src="js/carrito.js"></script>
+	</head>
+	
+	<body onload="Cargar('html/inicio.html', 'contenido')">
+		<header> FUTBOLER@S</header>
+		
+		<nav class="topnav" id="myTopnav">
+			<a href="#" onclick="Cargar('html/inicio.html', 'contenido')"> Inicio</a>
+			<a href="#" onclick="Cargar('html/empresa.html', 'contenido')"> Empresa</a>
+			<a href="#" onclick="Cargar('html/contacto.html', 'contenido')"> Contacto</a>
+			<a href="#" onclick="Cargar('html/productos.jsp', 'contenido')"> Productos</a>
+			<a href="#" onclick="Cargar('html/carrito.jsp', 'contenido')"> Carrito</a>
+			<a href="#" onclick="Cargar('html/usuario.html', 'contenido')"> Usuario</a>
+			<a href="#" onclick="Cargar('html/administracion.html', 'contenido')"> Administraci&oacute;n</a>
+			
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		    	<i class="fa fa-bars"></i>
+		  	</a>
+		</nav>
+		
+		<div id="contenido"> </div>
+		
+		<footer>
+			<a href="https://www.facebook.com/">
+				<i class="fa fa-facebook"></i>
+			</a>
+			
+			<a href="https://twitter.com/">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			<a href="https://www.instagram.com/">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</footer>
+		<script>
+			function myFunction() {
+			  var x = document.getElementById("myTopnav");
+			  
+			  if (x.className === "topnav") {
+			    x.className += " responsive";
+			  } else {
+			    x.className = "topnav";
+			  }
+			}
+			
+			window.addEventListener('scroll', function() {
+				  var footer = document.querySelector('footer');
+				  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+				    footer.style.display = 'block';
+				  } else {
+				    footer.style.display = 'none';
+				  }
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title> Contacto | Futboler@s</title>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="./images/icon.png">
+		<link rel="stylesheet" href="css/general.css">
+		<link rel="stylesheet" href="css/contacto.css">
+		<link rel="stylesheet" href="css/form.css">
+		<script src="js/libCapas2122.js"> </script>
+	</head>
+	
+	<body>
+		<div class="content">
+			<h1>P&aacute;gina de contacto</h1>
+			
+			<div>
+	        	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.2442828528033!2d-0.383888149100746!3d39.46380972086194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f364a715a87%3A0xc095e93f98a2f1c8!2sC.%20de%20Sant%20Vicent%20M%C3%A0rtir%2C%20123%2C%2046007%20Val%C3%A8ncia!5e0!3m2!1sca!2ses!4v1615142324322!5m2!1sca!2ses"></iframe>
+	        </div>
+			
+			<p> Si est&aacute;s interesado en contactar con nosotros, puedes hacerlo sin ning&uacute;n problema mediante tel&eacute;fono o en nuestras oficinas centrales de la ciudad de Valencia.</p>
+	
+			<p> &iexcl;Estaremos encantados de atenderte!</p>
+			
+			<ul>
+				<li> Tel&eacute;fono de contacto: 94 381 598.</li>
+				<li> Horario de atenci&oacute;n al cliente: de lunes a viernes de 9 a 13 h.</li>
+				<li> Ubicaci&oacute;n: calle San Vicente, 123, Valencia.</li>
+			</ul>
+			
+			<p> Tambi&eacute;n puedes contactar con nosotros mediante correo electr&oacute;nico.</p>
+			
+			<form action="contact.php" method="post">
+			    <p>
+			        <label for="nombre"> Nombre<span>*</span> </label>
+			        <input type="text" name="name" id="nombre" required placeholder="Escribe tu nombre">
+			    </p>
+			    
+			    <p>
+			        <label for="email"> Correo electr&oacute;nico <span>*</span> </label>
+			        <input type="email" name="email" id="email" required placeholder="Escribe tu Email">
+			    </p>
+			    
+			    <p>
+			        <label for="subject"> Asunto<span>*</span> </label>
+			        <input type="text" name="subject" id="subject" required placeholder="Escribe un asunto">
+			    </p>
+			    
+			    <p>
+			        <label for="message"> Mensaje<span>*</span> </label>
+			        <textarea name="message" id="message" required placeholder="Deja aquí tu comentario..."></textarea> 
+			    </p>
+			    
+			    <button type="submit" name="submit" id="contact"> Enviar </button>
+			</form>
+		</div>
+	</body>
+</html>
