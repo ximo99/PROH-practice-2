@@ -1,12 +1,13 @@
 @charset "ISO-8859-1";
 
 table {
-  width: 100%;
-  margin: 2% 0%;
-  border: 1px solid #DDD;
-  text-align: center;
-  border-spacing: 0;
   border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
 }
 
 th {
@@ -14,15 +15,11 @@ th {
   color: white;
 }
 
-td {
-  padding: 8px;
+tr:nth-child(even) {
+  background-color: #dfdfdf;
 }
 
-tr:nth-child(even){
-	background-color: #D3FFE9;
-}
-
-table.total tr:last-child {
+tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
 

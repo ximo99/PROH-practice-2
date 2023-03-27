@@ -66,7 +66,6 @@ function agregarProducto(codigo, descripcion, existencias, precio) {
   console.log(carrito);
 }
 
-
 // Función que elimina un producto del carrito por su código
 function eliminarProducto(codigo) {
   var carrito = obtenerCarrito(); // Obtiene el carrito desde el almacenamiento local
@@ -96,18 +95,19 @@ function eliminarProducto(codigo) {
 }
 
 // Función que vacía todo el carrito
-function vaciarProducto() {
+function vaciarCarrito() {
   localStorage.removeItem("carrito"); // Borra el carrito del almacenamiento local
   mostrarCarrito(carrito); // Muestra el carrito vacío
   console.log(carrito); // Imprime el carrito vacío en la consola
 }
 
-/*
+
 // Función que muestra el contenido del carrito en una tabla HTML
 function mostrarCarrito() {
   let carrito = obtenerCarrito();
   let tablaCarrito = document.getElementById("tablaCarrito");
   let totalGeneral = 0;
+  let totalCantidad = 0;
 
   // Elimina las filas existentes de la tabla
   while (tablaCarrito.rows.length > 1) {
@@ -117,55 +117,70 @@ function mostrarCarrito() {
   // Itera sobre los productos en el carrito
   for (let producto of carrito) {
     let totalProducto = producto.precio * producto.cantidad;
+    let cantidadProducto = producto.cantidad;
+    
     totalGeneral += totalProducto;
+    totalCantidad += cantidadProducto;
+    
     let fila = document.createElement("tr");
     fila.innerHTML = `
-        <td><img src="./images/${producto.codigo}.jpg" alt="${producto.codigo}"></td>
-      <td>${producto.codigo}</td>
+      <td><img src="./images/${producto.codigo}.jpg" alt="${producto.descripcion}"></td>
       <td>${producto.descripcion}</td>
-      <td>${producto.precio}</td>
+      <td>${producto.precio} &euro;</td>
       <td>${producto.cantidad}</td>
-      <td>${totalProducto}</td>
-      <td><input type="button" value="Eliminar" onclick="eliminarProducto('${producto.codigo}')"></td>
-      `;
+      <td><input type="button" class="button1" value="Eliminar" onclick="eliminarProducto('${producto.codigo}')"></td>`;
+      
     tablaCarrito.appendChild(fila);
   }
 
   // Agrega una fila con el total general del carrito
   let filaTotal = document.createElement("tr");
   filaTotal.innerHTML = `
-    <td colspan="4">Total</td>
-    <td>${totalGeneral}</td>
-    <td>&nbsp;</td> `;
+  	<td>&nbsp;</td>
+    <td colspan="1"><b>Total</b></td>
+    <td><b>${totalGeneral} &euro;<b></td>
+    <td><b>${totalCantidad}<b></td>
+    <td><input type="button" class="button1" value="Vaciar carrito" onclick="vaciarCarrito()"></td>`;
+    
   tablaCarrito.appendChild(filaTotal);
-}*/
+}
 
-function mostrarCarrito(carrito) {
-	// Obtén el contenedor del carrito
-	let carrito = obtenerCarritoDeLocalStorage();
-	let carritoContenedor = document.getElementById('carritoContenedor');
-	
-	// Limpia el contenedor si existe
-	if (tablaCarrito) { 
-		carritoContenedor.innerHTML = '';
-	
-		// Itera sobre los productos en el carrito
-		carrito.forEach((producto) => {
-		    // Crea un elemento contenedor para el producto
-		    const itemDiv = document.createElement("div");
-		    itemDiv.classList.add("item");
-		
-		    // Genera el código HTML del producto
-		    itemDiv.innerHTML = `
-				<img src="./images/${producto.codigo}.jpg" alt="${producto.codigo}">
-				<p><b>${producto.descripcion}</b></p>
-				<p>Precio: ${producto.precio} &euro;</p>
-				<p>Cantidad: ${producto.cantidad}</p>
-				<button type="button" class="button1" onclick="eliminarProducto(${producto.codigo})">Eliminar del carrito</button>
-		    `;
-		
-		    // Agrega el producto al contenedor del carrito
-		    carritoContenedor.appendChild(itemDiv);
-		});
-	}
+// Función que muestra el contenido del pedido en una tabla HTML
+function mostrarPedido() {
+  let carrito = obtenerCarrito();
+  let tablaCarrito = document.getElementById("tablaPedido");
+  let totalGeneral = 0;
+  let totalCantidad = 0;
+
+  // Elimina las filas existentes de la tabla
+  while (tablaCarrito.rows.length > 1) {
+    tablaCarrito.deleteRow(1);
+  }
+
+  // Itera sobre los productos en el carrito
+  for (let producto of carrito) {
+    let totalProducto = producto.precio * producto.cantidad;
+    let cantidadProducto = producto.cantidad;
+    
+    totalGeneral += totalProducto;
+    totalCantidad += cantidadProducto;
+    
+    let fila = document.createElement("tr");
+    fila.innerHTML = `
+		<td>${producto.codigo}</td>
+		<td>${producto.descripcion}</td>
+		<td>${producto.precio} &euro;</td>
+		<td>${producto.cantidad}</td>`;
+      
+    tablaCarrito.appendChild(fila);
+  }
+
+  // Agrega una fila con el total general del carrito
+  let filaTotal = document.createElement("tr");
+  filaTotal.innerHTML = `
+    <td colspan="2"><b>Total</b></td>
+    <td><b>${totalGeneral} &euro;<b></td>
+    <td><b>${totalCantidad}<b></td>`;
+    
+  tablaCarrito.appendChild(filaTotal);
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title> Carrito | Futboleros</title>
+        <title> Confirmar pedido | Futboleros</title>
 		<meta charset="UTF-8">
 		<link rel="shortcut icon" href="./images/icon.png">
 		<link rel="stylesheet" href="css/general.css">
@@ -15,22 +15,21 @@
 		
 			<h1> Tu carrito</h1>
 			
-			<table id="tablaCarrito">
+			<table id="tablaPedido">
 				<tr>
-				<th>Imagen</th>
-				<th>Descripción</th>
-				<th>Precio</th>
-				<th>Cantidad</th>
-				<th>&nbsp;</th>
+					<th>Código</th>
+					<th>Descripción</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
 				</tr>
 			</table>
 		</div>
 		<br>
 		<div>
-			<button class="button2" type="submit" name="submit" onclick="Cargar('html/comprar.jsp', 'contenido')">¡Compra ya!</button>
-			<button class="button2" type="submit" name="submit" onclick="Cargar('html/productos.jsp', 'contenido')"> Seguir comprando</button>
+			<button class="button2" type="submit" name="submit" onclick="Cargar('html/confirmar.html', 'contenido')">Confirmar</button>
+			<button class="button2" type="submit" name="submit" onclick="Cargar('html/productos.jsp', 'contenido')">Seguir comprando</button>
 		</div>
 		<br>
-		<script>mostrarCarrito();</script>
+		<script>mostrarPedido();</script>
 	</body>
 </html>
