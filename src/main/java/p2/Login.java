@@ -19,7 +19,7 @@ public class Login extends HttpServlet {
         int codigo = con.comprobarUsuarioBD(usuario, clave);
         
         if (codigo > 0) {
-            UsuarioBD usuarioBD = con.obtenerUsuarioPorCodigo(codigo);
+            UsuarioBD usuarioBD = con.obtenerUsuarioBDPorCodigo(codigo);
             if (usuarioBD != null) {
                 session.setAttribute("usuario", usuarioBD);
                 response.sendRedirect("./html/perfil.jsp");
@@ -33,7 +33,3 @@ public class Login extends HttpServlet {
         }
     }
 }
-
-
-
-

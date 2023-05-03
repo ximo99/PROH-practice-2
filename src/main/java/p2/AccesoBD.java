@@ -140,7 +140,7 @@ public final class AccesoBD {
 
         return false;
     }
-/*
+
     public List<UsuarioBD> obtenerUsuariosBD() {
         abrirConexionBD();
 
@@ -153,20 +153,22 @@ public final class AccesoBD {
             ResultSet resultado = s.executeQuery(con);
 
             while(resultado.next()){
-                UsuarioBD usuario = new UsuarioBD();
-                usuario.setCodigo(resultado.getInt("codigo"));
-                usuario.setUsuario(resultado.getString("usuario"));
-                usuario.setClave(resultado.getString("clave"));
-                usuario.setNombre(resultado.getString("nombre"));
-                usuario.setApellidos(resultado.getString("apellidos"));
-                usuario.setEmail(resultado.getString("email"));
-                usuario.setDomicilio(resultado.getString("domicilio"));
-                usuario.setPoblacion(resultado.getString("poblacion"));
-                usuario.setProvincia(resultado.getString("provincia"));
-                usuario.setCp(resultado.getString("cp"));
-                usuario.setTelefono(resultado.getString("telefono"));
-                usuario.setActivo(resultado.getBoolean("activo"));
-                usuario.setAdmin(resultado.getBoolean("admin"));
+                UsuarioBD usuario = new UsuarioBD(
+                    resultado.getInt("codigo"),
+                    resultado.getString("usuario"),
+                    resultado.getString("clave"),
+                    resultado.getString("nombre"),
+                    resultado.getString("apellidos"),
+                    resultado.getString("email"),
+                    resultado.getString("domicilio"),
+                    resultado.getString("poblacion"),
+                    resultado.getString("provincia"),
+                    resultado.getString("cp"),
+                    resultado.getString("telefono"),
+                    resultado.getBoolean("activo"),
+                    resultado.getBoolean("admin")
+                );
+
                 usuarios.add(usuario);
             }
         } catch(Exception e) {
@@ -175,9 +177,10 @@ public final class AccesoBD {
         }
 
         return usuarios;
-    }*/
+    }
 
-    public UsuarioBD obtenerUsuarioPorCodigo(int codigo) {
+
+    public UsuarioBD obtenerUsuarioBDPorCodigo(int codigo) {
         UsuarioBD usuario = null;
         abrirConexionBD();
 

@@ -14,7 +14,7 @@ public class Register extends HttpServlet {
             throws ServletException, IOException {
 
         String url = request.getParameter("url");
-        System.out.println("hola");
+        
         String usuario = request.getParameter("usuario");
         String clave = request.getParameter("clave");
         String nombre = request.getParameter("nombre");
@@ -34,11 +34,14 @@ public class Register extends HttpServlet {
         System.out.println(registro);
         
         if (registro) {
-            int codigo = con.comprobarUsuarioBD(usuario, clave);
-            if (codigo > 0) {
-                session.setAttribute("usuario", codigo);
-                response.sendRedirect("./html/perfil.jsp");
-            }
+        	int codigo = con.comprobarUsuarioBD(usuario, clave);
+        	if (codigo > 0) {
+        	    UsuarioBD usuarioBD = con.obtenerUsuarioBDPorCodigo(codigo);
+        	    session.setAttribute("usuario", usuarioBD);
+        	    response.sendRedirect("./html/perfil.jsp");
+        	}
+
+
         } else {
             session.setAttribute("mensaje", "Error al registrar el usuario, por favor intente nuevamente.");
             response.sendRedirect(url);
