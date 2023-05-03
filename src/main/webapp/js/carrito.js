@@ -100,6 +100,49 @@ function vaciarCarrito() {
   console.log(carrito); // Imprime el carrito vacío en la consola
 }
 
+// Función que muestra el contenido del carrito en una tabla HTML
+function mostrarCarrito() {
+  let carrito = obtenerCarrito();
+  let tablaCarrito = document.getElementById("tablaCarrito");
+  let totalGeneral = 0;
+  let totalCantidad = 0;
+
+  // Elimina las filas existentes de la tabla
+  while (tablaCarrito.rows.length > 1) {
+    tablaCarrito.deleteRow(1);
+  }
+
+  // Itera sobre los productos en el carrito
+  for (let producto of carrito) {
+    let totalProducto = producto.precio * producto.cantidad;
+    let cantidadProducto = producto.cantidad;
+    
+    totalGeneral += totalProducto;
+    totalCantidad += cantidadProducto;
+    
+    let fila = document.createElement("tr");
+    fila.innerHTML = `
+      <td><img src="./images/${producto.codigo}.jpg" alt="${producto.descripcion}"></td>
+      <td>${producto.descripcion}</td>
+      <td>${producto.precio} &euro;</td>
+      <td>${producto.cantidad}</td>
+      <td><input type="button" class="button1" value="Eliminar" onclick="eliminarProducto('${producto.codigo}');Cargar('./html/carrito.jsp','contenido')"></td>`;
+      
+    tablaCarrito.appendChild(fila);
+  }
+
+  // Agrega una fila con el total general del carrito
+  let filaTotal = document.createElement("tr");
+  filaTotal.innerHTML = `
+  	<td>&nbsp;</td>
+    <td colspan="1"><b>Total</b></td>
+    <td><b>${totalGeneral} &euro;<b></td>
+    <td><b>${totalCantidad}<b></td>
+    <td><input type="button" class="button1" value="Vaciar carrito" onclick="vaciarCarrito();Cargar('./html/carrito.jsp','contenido')"></td>`;
+    
+  tablaCarrito.appendChild(filaTotal);
+}
+
 // Función que muestra el contenido del pedido en una tabla HTML
 function mostrarPedido() {
   let carrito = obtenerCarrito();
