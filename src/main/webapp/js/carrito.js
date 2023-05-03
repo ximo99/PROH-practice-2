@@ -1,5 +1,5 @@
 // Inicializa un array vacío para el carrito
-let carrito = [];
+let carrito =[];
 
 // Función para obtener el carrito desde el almacenamiento local
 function obtenerCarrito() {
@@ -34,7 +34,8 @@ function agregarProducto(codigo, descripcion, existencias, precio) {
       if (carrito[i].existencias > 0) {
         carrito[i].cantidad++;
         carrito[i].existencias--;
-        productoEncontrado = true;
+        productoEncontrado = true;+
+        alert("Producto añadido al carrito. Has añadido: "+carrito[i].descripcion+ ". Cantidad añadida: "+carrito[i].cantidad);
         break;
       } else {
         // Si no hay existencias, muestra un mensaje de alerta y sale de la función
@@ -54,6 +55,7 @@ function agregarProducto(codigo, descripcion, existencias, precio) {
         cantidad: 1,
         existencias: existencias - 1,
       });
+      alert("Producto añadido al carrito. Has añadido: "+carrito[i].descripcion+ ". Cantidad añadida: "+carrito[i].cantidad);
     } else {
       // Si no hay existencias, muestra un mensaje de alerta
       alert("No hay más existencias de este producto.");
@@ -62,7 +64,6 @@ function agregarProducto(codigo, descripcion, existencias, precio) {
 
   // Guarda el carrito en el localStorage y lo muestra en la página
   guardarCarrito(carrito);
-  mostrarCarrito(carrito);
   console.log(carrito);
 }
 
@@ -88,7 +89,6 @@ function eliminarProducto(codigo) {
     );
   } else { // Si lo encontró
     guardarCarrito(carrito); // Guarda el carrito actualizado en el almacenamiento local
-    mostrarCarrito(carrito); // Muestra el carrito actualizado
   }
 
   console.log(carrito); // Imprime el carrito actualizado en la consola
@@ -97,7 +97,6 @@ function eliminarProducto(codigo) {
 // Función que vacía todo el carrito
 function vaciarCarrito() {
   localStorage.removeItem("carrito"); // Borra el carrito del almacenamiento local
-  mostrarCarrito(carrito); // Muestra el carrito vacío
   console.log(carrito); // Imprime el carrito vacío en la consola
 }
 
@@ -128,7 +127,7 @@ function mostrarCarrito() {
       <td>${producto.descripcion}</td>
       <td>${producto.precio} &euro;</td>
       <td>${producto.cantidad}</td>
-      <td><input type="button" class="button1" value="Eliminar" onclick="eliminarProducto('${producto.codigo}')"></td>`;
+      <td><input type="button" class="button1" value="Eliminar" onclick="eliminarProducto('${producto.codigo}');Cargar('./html/carrito.jsp','contenido')"></td>`;
       
     tablaCarrito.appendChild(fila);
   }
@@ -140,7 +139,7 @@ function mostrarCarrito() {
     <td colspan="1"><b>Total</b></td>
     <td><b>${totalGeneral} &euro;<b></td>
     <td><b>${totalCantidad}<b></td>
-    <td><input type="button" class="button1" value="Vaciar carrito" onclick="vaciarCarrito()"></td>`;
+    <td><input type="button" class="button1" value="Vaciar carrito" onclick="vaciarCarrito();Cargar('./html/carrito.jsp','contenido')"></td>`;
     
   tablaCarrito.appendChild(filaTotal);
 }

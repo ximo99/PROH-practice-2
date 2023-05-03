@@ -27,6 +27,7 @@
 		<br>
 		<div>
 			<button class="button2" type="submit" name="submit" onclick="Cargar('html/confirmar.html', 'contenido')">Confirmar</button>
+			<br>
 			<button class="button2" type="submit" name="submit" onclick="Cargar('html/productos.jsp', 'contenido')">Seguir comprando</button>
 		</div>
 		<br>
