@@ -1,5 +1,5 @@
 
-Asignatura de Programación Hipermedia dentro del grado de Ingeniería Multimedia por la ETSE (Escuela Técnica Superior de Enginiería) - Universitat de València. Mayo 2019. Calificación 8,5.
+Asignatura de Programación Hipermedia dentro del grado de Ingeniería Multimedia por la ETSE (Escuela Técnica Superior de Enginiería) - Universitat de València. Mayo 2023. Calificación 8,5.
 
 El objetivo de esta práctica es continuar con la creación de la tienda virtual iniciada en la primera práctica. Para ello crearemos una aplicación web que siga el patrón de diseño Modelo/Vista/Controlador (MVC) e implemente en Java la parte dinámica de la tienda. En esta práctica proporcionaremos el contenido dinámico a las páginas web elaboradas en la
 primera práctica, añadiendo un conjunto de Servlets, JavaBeans, Factories y páginas JSPs interconectados para permitir realizar la compra de los productos de la tienda virtual. Como parte de la arquitectura de la aplicación web, se deberá diseñar y crear una base de datos MySQL y una estructura de datos básica para almacenar la información relativa al sitio web creado.
