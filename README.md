@@ -1,4 +1,4 @@
-# Hypermedia Programming: practice 1.
+# Hypermedia Programming: practice 2.
 Asignatura de Programación Hipermedia dentro del grado de Ingeniería Multimedia por la ETSE (Escuela Técnica Superior de Enginiería) - Universitat de València. Abril - mayo 2023. Práctica 2. Calificación 8,5.
 
 El objetivo de esta práctica es continuar con la creación de la tienda virtual iniciada en la primera práctica. Para ello crearemos una aplicación web que siga el patrón de diseño Modelo/Vista/Controlador (MVC) e implemente en Java la parte dinámica de la tienda. En esta práctica proporcionaremos el contenido dinámico a las páginas web elaboradas en la
